@@ -1,0 +1,18 @@
+# Raw data — download from Kaggle/Zillow (see project proposal for links)
+data/realtor-data.zip.csv
+data/zhvi_zip.csv
+realtor-data.zip.csv.zip
+
+# Random Forest model — too large (80MB); XGBoost is checked in
+outputs/models/random_forest.joblib
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# Virtual environments
+.venv/
+venv/
+env/
