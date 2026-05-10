@@ -113,19 +113,22 @@ def fit_clusters(hood, X_scaled, k=4):
 
 
 def plot_clusters(hood, save_path=None):
-    # Clip axes to avoid extreme outliers dominating the scatter
-    price_sqft_99 = hood['median_price_sqft'].quantile(0.99)
-    growth_1yr_1  = hood['growth_1yr'].quantile(0.01)
-    growth_1yr_99 = hood['growth_1yr'].quantile(0.99)
+    # Use axis limits (not data clipping) so outliers fall off the edge
+    # without creating artificial pile-ups at the boundary
+    x_lo = hood['growth_1yr'].quantile(0.005) * 100
+    x_hi = hood['growth_1yr'].quantile(0.995) * 100
+    y_hi = hood['median_price_sqft'].quantile(0.995)
 
     fig, axes = plt.subplots(1, 2, figsize=(14, 5))
 
     for label, grp in hood.groupby('cluster_label'):
         axes[0].scatter(
-            grp['growth_1yr'].clip(growth_1yr_1, growth_1yr_99) * 100,
-            grp['median_price_sqft'].clip(upper=price_sqft_99),
+            grp['growth_1yr'] * 100,
+            grp['median_price_sqft'],
             alpha=0.4, s=12, label=label
         )
+    axes[0].set_xlim(x_lo, x_hi)
+    axes[0].set_ylim(0, y_hi)
     axes[0].set(
         title='Neighborhood Clusters',
         xlabel='1-Year Price Growth (%)',
