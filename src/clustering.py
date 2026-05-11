@@ -1,5 +1,3 @@
-import matplotlib
-matplotlib.use('Agg')
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -69,7 +67,7 @@ def find_optimal_k(hood, k_range=range(2, 9), save_path=None):
     plt.tight_layout()
     if save_path:
         plt.savefig(save_path, dpi=150, bbox_inches='tight')
-    plt.close(fig)
+    plt.show()
 
     best_k = list(k_range)[int(np.argmax(sil_scores))]
     print(f"\nBest k by silhouette: {best_k}  (score={max(sil_scores):.3f})")
@@ -145,4 +143,4 @@ def plot_clusters(hood, save_path=None):
     plt.tight_layout()
     if save_path:
         plt.savefig(save_path, dpi=150, bbox_inches='tight')
-    plt.close(fig)
+    plt.show()
