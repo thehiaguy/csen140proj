@@ -1,0 +1,11 @@
+price,bed,bath,house_size,acre_lot,zip_code,address,city,state
+320000,3,2,1850,0.25,30301,123 Maple St,Atlanta,GA
+180000,2,1,1100,0.15,58102,456 Pine Ave,Fargo,ND
+750000,4,3,2800,0.50,98101,789 Oak Blvd,Seattle,WA
+210000,3,2,1400,0.20,39201,321 Elm Dr,Jackson,MS
+495000,4,2,2200,0.35,23219,654 Cedar Ln,Richmond,VA
+155000,2,1,950,0.10,26101,987 Birch Rd,Parkersburg,WV
+620000,5,4,3500,0.75,20001,111 Walnut St,Washington,DC
+275000,3,2,1600,0.30,55101,222 Spruce Ave,Saint Paul,MN
+185000,2,2,1250,0.18,36101,333 Willow Ct,Montgomery,AL
+440000,4,3,2400,0.45,21201,444 Poplar Blvd,Baltimore,MD
